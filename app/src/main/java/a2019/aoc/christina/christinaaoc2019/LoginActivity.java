@@ -36,16 +36,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (editTextPassword.getText().toString().equals("")||
                     editTextEmail.getText().toString().equals(""))
             {
-                Toast.makeText( this, "Empty Password or Email", )
+                Toast.makeText(this, "Empty Email or Password", Toast.LENGTH_LONG);
             }
 
-            Intent i = new Intent( this, MainActivity.class);
-            startActivity(i);
+            else{
+                Intent i = new Intent (this, MainActivity.class);
+                i.putExtra("Email", editTextEmail.getText().toString());
+                i.putExtra("Password", editTextPassword.getText().toString());
+                startActivity(i);
+            }
 
         }
         else{
-
+            Intent i = new Intent (this, SignUpActivity.class);
+            startActivity(i);
         }
-
     }
 }
