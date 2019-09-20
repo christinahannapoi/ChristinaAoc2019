@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,6 +33,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if(v==buttonLogin) {
+            if (editTextPassword.getText().toString().equals("")||
+                    editTextEmail.getText().toString().equals(""))
+            {
+                Toast.makeText( this, "Empty Password or Email", )
+            }
+
             Intent i = new Intent( this, MainActivity.class);
             startActivity(i);
 
