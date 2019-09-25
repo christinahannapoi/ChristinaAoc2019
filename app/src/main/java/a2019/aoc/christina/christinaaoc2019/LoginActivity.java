@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
 
         }
-        else{
+        else {
             Intent i = new Intent (this, SignUpActivity.class);
             startActivity(i);
         }

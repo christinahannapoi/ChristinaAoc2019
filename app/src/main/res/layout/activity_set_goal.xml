@@ -8,9 +8,31 @@
 
     <TextView
         android:id="@+id/textViewGoal"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
         android:gravity="center"
         android:text="Set Goal"
         android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/5000"
+        android:layout_width="173dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="5000 steps"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/goal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="10000 steps" />
+
+    <CheckBox
+        android:id="@+id/goal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="12000 steps" />
 </LinearLayout>
