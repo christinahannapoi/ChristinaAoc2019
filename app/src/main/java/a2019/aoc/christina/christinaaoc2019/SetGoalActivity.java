@@ -57,4 +57,9 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
 
     }
+
+    private void EventHandler()
+    {
+        btnGetOut()
+    }
 }
