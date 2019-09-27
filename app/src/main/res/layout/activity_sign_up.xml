@@ -20,7 +20,7 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="password"
@@ -30,8 +30,9 @@
 
     <EditText
         android:id="@+id/editTextName"
-        android:layout_width="wrap_content"
+        android:layout_width="778dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"

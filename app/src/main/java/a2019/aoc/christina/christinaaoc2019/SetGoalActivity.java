@@ -6,19 +6,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class SetGoalActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText textViewGoal;
     CheckBox goal1, goal2, goal3;
+    Button okButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_goal);
+        okButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -55,11 +60,21 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
+        if (v == okButton)
+        {
+            if ((!goal1.isChecked()) && (!goal2.isChecked()) && (!goal3.isChecked()))
+            {
+                Toast.makeText(this, "Check at least 1 option", Toast.LENGTH_LONG);
+            }
+            Intent i = new Intent (this, SelectShopActivity.class);
+            if (goal1.isChecked())
+            {
+               
+            }
 
-    }
+            startActivity(i);
 
-    private void EventHandler()
-    {
-        btnGetOut()
+        }
+
     }
 }

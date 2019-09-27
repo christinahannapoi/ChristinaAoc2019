@@ -17,7 +17,7 @@
     <CheckBox
         android:id="@+id/5000"
         android:layout_width="173dp"
-        android:layout_height="match_parent"
+        android:layout_height="343dp"
         android:layout_weight="1"
         android:text="5000 steps"
         tools:visibility="visible" />
@@ -35,4 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="12000 steps" />
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Submit" />
 </LinearLayout>
