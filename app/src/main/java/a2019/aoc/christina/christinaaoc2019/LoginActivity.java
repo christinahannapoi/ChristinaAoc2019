@@ -40,16 +40,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
 
             else{
-                Intent i = new Intent (this, MainActivity.class);
-                i.putExtra("Email", editTextEmail.getText().toString());
-                i.putExtra("Password", editTextPassword.getText().toString());
-                startActivity(i);
+                Intent i1 = new Intent (this, MainActivity.class);
+                i1.putExtra("Email", editTextEmail.getText().toString());
+                i1.putExtra("Password", editTextPassword.getText().toString());
+                startActivity(i1);
             }
 
         }
-        else {
-            Intent i = new Intent (this, SignUpActivity.class);
-            startActivity(i);
+        if (v==buttonSignUp) {
+            Intent i2 = new Intent (this, SignUpActivity.class);
+            startActivity(i2);
         }
     }
 }

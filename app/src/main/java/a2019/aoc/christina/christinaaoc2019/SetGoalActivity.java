@@ -56,22 +56,16 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
         }
         return true;
     }
-
-
     @Override
     public void onClick(View v) {
         if (v == okButton)
         {
-            if ((!goal1.isChecked()) && (!goal2.isChecked()) && (!goal3.isChecked()))
+
+            if ((!goal1.isChecked()) && (!goal2.isChecked()) && (!goal3.isChecked())&& (textViewGoal.getText().toString().equals("")))
             {
-                Toast.makeText(this, "Check at least 1 option", Toast.LENGTH_LONG);
+                Toast.makeText(this, "Check at least 1 option or type a different one" ,Toast.LENGTH_LONG);
             }
             Intent i = new Intent (this, SelectShopActivity.class);
-            if (goal1.isChecked())
-            {
-               
-            }
-
             startActivity(i);
 
         }
