@@ -24,6 +24,7 @@ public class AlertActivity extends AppCompatActivity implements View.OnClickList
         Builder = new AlertDialog.Builder(AlertActivity.this);
         Builder.setMessage("Are you sure you want to log out?");
         Builder.setCancelable(false);
+
         Builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
