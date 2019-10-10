@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import android.content.Intent;
 
@@ -12,6 +13,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     EditText editTextName, editTextPassword, editTextEmail;
     Button buttonSignUp;
+    ImageButton imageButtonProfile;
 
 
     @Override
@@ -19,10 +21,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+
             editTextName = findViewById(R.id.editTextName);
             editTextEmail = findViewById(R.id.editTextEmail);
             editTextPassword = findViewById(R.id.editTextPassword);
-
+            imageButtonProfile = findViewById(R.id.imageButtonProfile);
+            imageButtonProfile.setOnClickListener(this);
             buttonSignUp = findViewById(R.id.buttonSignUp);
             buttonSignUp.setOnClickListener(this);
 
@@ -40,6 +44,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     i.putExtra("Password", editTextPassword.getText().toString());
                     startActivity(i);
                 }
+            }
+            if (v==imageButtonProfile)
+            {
+                Intent i = new Intent(this, CameraActivity.class);
+                startActivity(i);
             }
 
             }

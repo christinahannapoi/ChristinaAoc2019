@@ -11,14 +11,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
-public class SetGoalActivity extends AppCompatActivity implements View.OnClickListener {
+public class SetGoalActivity extends AppCompatActivity implements View.OnClickListener  {
 
     EditText textViewGoal;
     CheckBox goal1, goal2, goal3;
     Button okButton;
+    int id = 0;
+
+    RadioGroup radioGroupGoals;
+    RadioButton r1, r2, r3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,17 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
 
         okButton = findViewById(R.id.okButton);
         okButton.setOnClickListener(this);
+        r1 = findViewById(R.id.radioButtonG1);
+        r2 = findViewById(R.id.radioButtonG2);
+        r3 = findViewById(R.id.radioButtonG3);
+
+        radioGroupGoals = findViewById(R.id.radioGroupGoals);
+        radioGroupGoals.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    id = checkedId;
+            }
+        });
 
     }
 
@@ -80,33 +97,14 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
         }
         return true;
     }
+
+
     @Override
     public void onClick(View v) {
-        if (v == okButton)
+        if (v==okButton)
         {
-            if ((!goal1.isChecked()) && (!goal2.isChecked()) && (!goal3.isChecked())&& (textViewGoal.getText().toString().equals("")))
-            {
-                Toast.makeText(this, "Check at least 1 option or type a different one" ,Toast.LENGTH_LONG);
-            }
-            Intent i = new Intent (this, SelectShopActivity.class);
-            if (goal1.isChecked())
-            {
-                i.putExtra("goal", goal1.getText().toString());
-            }
-            if (goal2.isChecked())
-            {
-                i.putExtra("goal", goal2.getText().toString());
-            }
-            if (goal3.isChecked())
-            {
-                i.putExtra("goal", goal3.getText().toString());
-            }
-            if (!textViewGoal.getText().toString().equals(""))
-            {
-                i.putExtra("goal", textViewGoal.getText().toString())
-            }
+            Intent i = new Intent(this, SelectCouponActivity.class);
             startActivity(i);
         }
-
     }
 }

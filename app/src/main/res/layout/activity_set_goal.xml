@@ -16,33 +16,34 @@
         android:text="Set Goal"
         android:textSize="30sp" />
 
-    <CheckBox
-        android:id="@+id/goal2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="10000 steps" />
+    <RadioGroup
+        android:id="@+id/radioGroupGoals"
+        android:layout_width="match_parent"
+        android:layout_height="128dp">
 
-    <CheckBox
-        android:id="@+id/goal1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="5000 steps"
-        tools:visibility="visible" />
+        <RadioButton
+            android:id="@+id/radioButtonG1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8000 steps" />
 
-    <CheckBox
-        android:id="@+id/goal3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="12000 steps" />
+        <RadioButton
+            android:id="@+id/radioButtonG2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10000 steps" />
+
+        <RadioButton
+            android:id="@+id/radioButtonG3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="120000 steps" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/okButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="127dp"
         android:text="Submit" />
 
 </LinearLayout>
