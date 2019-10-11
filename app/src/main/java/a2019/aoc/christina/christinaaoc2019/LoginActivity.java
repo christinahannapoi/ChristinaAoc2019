@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
 
             else{
-                Intent i1 = new Intent (this, MainActivity.class);
+                Intent i1 = new Intent (this, MainCounterActivity.class);
                 i1.putExtra("Email", editTextEmail.getText().toString());
                 i1.putExtra("Password", editTextPassword.getText().toString());
                 startActivity(i1);

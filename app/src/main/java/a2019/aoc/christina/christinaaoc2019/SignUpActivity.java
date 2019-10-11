@@ -47,8 +47,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             }
             if (v==imageButtonProfile)
             {
-                Intent i = new Intent(this, CameraActivity.class);
-                startActivity(i);
+                Intent i2 = new Intent(this, CameraActivity.class);
+                startActivity(i2);
             }
 
             }
