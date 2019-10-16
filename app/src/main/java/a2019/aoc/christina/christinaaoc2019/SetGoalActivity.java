@@ -48,58 +48,6 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     @Override
-    public boolean onCreateOptionsMenu (Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.go_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        Intent goToNextActivity = new Intent (getApplicationContext(), LoginActivity.class);
-
-        switch (item.getItemId())
-        {
-            case R.id.logOutItem:
-                goToNextActivity = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(goToNextActivity);
-                break;
-
-            case R.id.changeGoalItem:
-                goToNextActivity = new Intent (getApplicationContext(), SettingsActivity.class);
-                AlertDialog.Builder Builder;
-                Builder = new AlertDialog.Builder(SetGoalActivity.this);
-                Builder.setMessage("Are you sure you want to change your goal?");
-                Builder.setCancelable(false);
-
-                Builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        SetGoalActivity.this.finish();
-                    }
-                }).setNegativeButton("no", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                AlertDialog Alert = Builder.create();
-                Alert.show();
-                startActivity(goToNextActivity);
-                break;
-
-            case R.id.backItem:
-                goToNextActivity = new Intent (getApplicationContext(),SignUpActivity.class);
-                startActivity(goToNextActivity);
-                break;
-        }
-        return true;
-    }
-
-
-    @Override
     public void onClick(View v) {
         if (v==okButton)
         {

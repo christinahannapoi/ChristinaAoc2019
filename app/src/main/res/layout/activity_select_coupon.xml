@@ -4,4 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectCouponActivity"/>
+    tools:context=".SelectCouponActivity"
+    android:orientation="horizontal">
+
+    <RadioGroup
+        android:id="@+id/radioGroupCoupons"
+        android:layout_width="match_parent"
+        android:layout_height="131dp">
+
+        <RadioButton
+            android:id="@+id/coupon1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shop1: $10 free" />
+
+        <RadioButton
+            android:id="@+id/coupon2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shop 2: $15 free" />
+
+        <RadioButton
+            android:id="@+id/coupon3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shop 3: $12 free" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="422dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:foregroundGravity="center"
+        android:text="Button" />
+</LinearLayout>

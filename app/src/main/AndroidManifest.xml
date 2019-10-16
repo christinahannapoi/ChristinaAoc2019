@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="a2019.aoc.christina.christinaaoc2019">
 
+    <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="true"/>
+    <uses-feature android:name="android.hardware.sensor.stepdetector" android:required="true"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +16,6 @@
         <activity android:name=".SelectCouponActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".AlertActivity" />
-        <activity android:name=".SettingsActivity" />
         <activity android:name=".SetGoalActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

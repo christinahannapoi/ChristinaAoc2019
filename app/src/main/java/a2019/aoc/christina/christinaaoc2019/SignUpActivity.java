@@ -51,9 +51,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(i2);
             }
 
-            }
-
         }
+
+}
 
 
 

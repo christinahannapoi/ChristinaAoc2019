@@ -1,21 +1,76 @@
 package a2019.aoc.christina.christinaaoc2019;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.renderscript.ScriptGroup;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainCounterActivity extends AppCompatActivity {
+import java.util.Set;
+
+public class MainCounterActivity extends AppCompatActivity implements SensorEventListener {
+
+    private SensorManager sensorManager;
+    private TextView count;
+    boolean activityRunning;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_counter);
+
+        count = (TextView) findViewById(R.id.count);
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activityRunning = true;
+        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        if (countSensor!=null)
+        {
+            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
+        }
+        else
+        {
+            Toast.makeText(this, "Count sensor not available!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        activityRunning = false;
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if(activityRunning)
+        {
+            count.setText(String.valueOf(event.values[0]));
+        }
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu (Menu menu)
@@ -26,22 +81,21 @@ public class MainCounterActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         Intent goToNextActivity = new Intent (getApplicationContext(), LoginActivity.class);
 
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.logOutItem:
-                goToNextActivity = new Intent(getApplicationContext(),LoginActivity.class);
+                goToNextActivity = new Intent(getApplicationContext(), LoginActivity.class);
                 AlertDialog.Builder Builder;
                 Builder = new AlertDialog.Builder(MainCounterActivity.this);
                 Builder.setMessage("Are you sure you want to log out?");
                 Builder.setCancelable(false);
 
+                final Intent finalGoToNextActivity = goToNextActivity;
                 Builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        MainCounterActivity.this.finish();
+                        startActivity(finalGoToNextActivity);
                     }
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
                     @Override
@@ -54,18 +108,18 @@ public class MainCounterActivity extends AppCompatActivity {
                 Alert.show();
                 break;
 
-
             case R.id.changeGoalItem:
-                goToNextActivity = new Intent (getApplicationContext(), SetGoalActivity.class);
+                goToNextActivity = new Intent(getApplicationContext(), SetGoalActivity.class);
                 AlertDialog.Builder Builder2;
                 Builder2 = new AlertDialog.Builder(MainCounterActivity.this);
                 Builder2.setMessage("Are you sure you want to change your goal?");
                 Builder2.setCancelable(false);
 
+                final Intent finalGoToNextActivity1 = goToNextActivity;
                 Builder2.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        MainCounterActivity.this.finish();
+                        startActivity(finalGoToNextActivity1);
                     }
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
                     @Override
