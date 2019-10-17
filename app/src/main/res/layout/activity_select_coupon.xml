@@ -33,8 +33,9 @@
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="422dp"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:foregroundGravity="center"
         android:text="Button" />
