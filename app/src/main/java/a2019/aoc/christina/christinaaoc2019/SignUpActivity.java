@@ -12,7 +12,7 @@ import android.content.Intent;
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextName, editTextPassword, editTextEmail;
-    Button buttonSignUp;
+    Button buttonSignUp, infoButton;
     ImageButton imageButtonProfile;
 
 
@@ -29,6 +29,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             imageButtonProfile.setOnClickListener(this);
             buttonSignUp = findViewById(R.id.buttonSignUp);
             buttonSignUp.setOnClickListener(this);
+            infoButton = findViewById(R.id.infoButton);
+            infoButton.setOnClickListener(this);
 
     }
         public void onClick (View v)
@@ -49,6 +51,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             {
                 Intent i2 = new Intent(this, CameraActivity.class);
                 startActivity(i2);
+            }
+            if (v==infoButton)
+            {
+                Intent i3 = new Intent (this, InformationActivity.class);
+                startActivity(i3);
             }
 
         }
