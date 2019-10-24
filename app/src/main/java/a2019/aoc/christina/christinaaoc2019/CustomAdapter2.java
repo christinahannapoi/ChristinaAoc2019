@@ -34,7 +34,10 @@ public class CustomAdapter2 extends ArrayAdapter<Coupon> {
 
     /*
     getView() method. This view is called when a listItem needs to be created and populated with the data.In this method first the View is inflated using the LayoutInflator.inflate() method. It is important that you check that if the view you are trying to inflate is new or reused
+
+
      */
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -46,7 +49,7 @@ public class CustomAdapter2 extends ArrayAdapter<Coupon> {
         Coupon p = getItem(position);
 
         if (p != null) {
-            TextView tvName = (TextView) v.findViewById(R.id.tvName);
+            TextView shopName = (TextView) v.findViewById(R.id.shopName);
             tvName.setText(p.getName());
 
             Button btEdit = v.findViewById(R.id.btEdit);
