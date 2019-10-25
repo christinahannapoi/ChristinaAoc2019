@@ -2,9 +2,6 @@ package a2019.aoc.christina.christinaaoc2019;
 
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,23 +46,27 @@ public class CustomAdapter2 extends ArrayAdapter<Coupon> {
 
         if (p != null) {
             TextView shopName = (TextView) v.findViewById(R.id.shopName);
-            tvName.setText(p.getName());
+            TextView couponMoney = (TextView) v.findViewById(R.id.couponMoney);
+            TextView expirationDate = (TextView) v.findViewById(R.id.expirationDate);
+            TextView stepsRequired = (TextView) v.findViewById(R.id.stepsRequired);
+            ImageView shopImage = (ImageView) v.findViewById(R.id.shopImage);
 
-            Button btEdit = v.findViewById(R.id.btEdit);
-            btEdit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
-
-            Button btDelete = v.findViewById(R.id.btDelete);
-            btDelete.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    return false;
-                }
-            });
+           if (shopName!=null)
+           {
+               shopName.setText(p.getShopName());
+           }
+           if(couponMoney!=null)
+           {
+               couponMoney.setText((p.getCouponMoney()));
+           }
+           if(expirationDate!=null)
+           {
+               expirationDate.setText(p.getExpirationDate());
+           }
+           if (stepsRequired!=null)
+           {
+               stepsRequired.setText(p.getStepsRequired());
+           }
         }
 
         return v;
