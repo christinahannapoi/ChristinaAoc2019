@@ -132,6 +132,30 @@ public class MainCounterActivity extends AppCompatActivity implements SensorEven
                 Alert2.show();
                 break;
 
+            case R.id.infoItem:
+                goToNextActivity = new Intent(getApplicationContext(), InformationActivity.class);
+                AlertDialog.Builder Builder3;
+                Builder3 = new AlertDialog.Builder(MainCounterActivity.this);
+                Builder3.setMessage("Are you sure you want to leave this page?");
+                Builder3.setCancelable(false);
+
+                final Intent finalGoToNextActivity2 = goToNextActivity;
+                Builder3.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(finalGoToNextActivity2);
+                    }
+                }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog Alert3 = Builder3.create();
+                Alert3.show();
+                break;
+
         }
         return true;
     }

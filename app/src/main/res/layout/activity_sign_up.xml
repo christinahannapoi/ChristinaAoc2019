@@ -18,13 +18,15 @@
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="email" />
+        android:hint="email"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="password" />
+        android:hint="password"
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -41,9 +43,4 @@
         android:layout_height="wrap_content "
         android:text="Sign Up" />
 
-    <Button
-        android:id="@+id/infoButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="What is this app?" />
 </LinearLayout>

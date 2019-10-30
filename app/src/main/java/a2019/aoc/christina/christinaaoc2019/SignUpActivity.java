@@ -1,6 +1,7 @@
 package a2019.aoc.christina.christinaaoc2019;
 
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -21,10 +22,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Set;
+
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextName, editTextPassword, editTextEmail;
-    Button buttonSignUp, infoButton;
+    Button buttonSignUp;
     ImageButton imageButtonProfile;
 
     private FirebaseAuth mAuth;
@@ -42,6 +45,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_up);
         mAuth = FirebaseAuth.getInstance();
 
+
         editTextName = findViewById(R.id.editTextName);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -49,8 +53,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         imageButtonProfile.setOnClickListener(this);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         buttonSignUp.setOnClickListener(this);
-        infoButton = findViewById(R.id.infoButton);
-        infoButton.setOnClickListener(this);
+        Intent i = getIntent();
+        if(i.getExtras() != null ){
+            imageButtonProfile.setImageBitmap((Bitmap) i.getExtras().get("image"));
+        }
 
     }
 
@@ -69,14 +75,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            Log.d("firebase", "createUserWithEmail:success");
                             Intent i = new Intent(SignUpActivity.this, SetGoalActivity.class);
                             i.putExtra("Name", editTextName.getText().toString());
                             i.putExtra("Email", editTextEmail.getText().toString());
                             i.putExtra("Password", editTextPassword.getText().toString());
                             startActivity(i);
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("firebase", "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -99,16 +104,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     editTextEmail.getText().toString().equals("") || editTextName.getText().toString().equals("")) {
                 Toast.makeText(this, "Empty Name, Email or Password", Toast.LENGTH_LONG);
             } else {
-
+                signUp(editTextPassword.getText().toString(), editTextEmail.getText().toString());
+                Intent i = new Intent (this, SetGoalActivity.class);
+                startActivity(i);
             }
         }
         if (v == imageButtonProfile) {
             Intent i2 = new Intent(this, CameraActivity.class);
             startActivity(i2);
-        }
-        if (v == infoButton) {
-            Intent i3 = new Intent(this, InformationActivity.class);
-            startActivity(i3);
         }
 
     }
@@ -118,8 +121,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Intent goToNextActivity = new Intent(getApplicationContext(), InformationActivity.class);
 
         switch (item.getItemId()) {
-            case R.id.infoButton:
-                goToNextActivity = new Intent(getApplicationContext(), LoginActivity.class);
+            case R.id.infoItem:
+                goToNextActivity = new Intent(getApplicationContext(),InformationActivity.class);
                 AlertDialog.Builder Builder;
                 Builder = new AlertDialog.Builder(SignUpActivity.this);
                 Builder.setMessage("Are you sure you want to leave this page?");

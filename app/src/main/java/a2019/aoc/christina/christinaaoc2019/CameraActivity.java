@@ -22,9 +22,9 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        cameraButton.findViewById(R.id.cameraButton);
-        button2.findViewById(R.id.button2);
-        imageView.findViewById(R.id.imageView);
+        cameraButton = findViewById(R.id.cameraButton);
+        button2 = findViewById(R.id.buttonGallery);
+        imageView = findViewById(R.id.profileImageView);
 
         cameraButton.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -44,8 +44,11 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     {
         if (requestCode==CAMERA_REQUEST && resultCode== Activity.RESULT_OK)
         {
-            bitmap = (Bitmap) data.getExtras().get(" Data ");
-            imageView.setImageBitmap(bitmap);
+            bitmap = (Bitmap) data.getExtras().get("data");
+            //imageView.setImageBitmap(bitmap);
+            Intent i = new Intent(this, SignUpActivity.class);
+            i.putExtra("image", bitmap);
+            startActivity(i);
         }
     }
 }

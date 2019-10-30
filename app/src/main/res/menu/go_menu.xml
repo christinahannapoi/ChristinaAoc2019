@@ -5,7 +5,9 @@
     <item
         android:id="@+id/changeGoalItem"
         android:title="Change Goal" />
-    <item android:title="infoItem" />
+    <item
+        android:id="@+id/infoItem"
+        android:title="Information" />
 
 
 </menu>

@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".InformationActivity">
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="188dp"
+        android:layout_height="86dp"
         android:text="Why use PoiGO?"
         tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="53dp" />
@@ -17,14 +18,8 @@
     <TextView
         android:id="@+id/contentTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="104dp"
         android:layout_weight="1"
         android:text="This app encourages every non-fit user to take on a healthy lifestyle while earning points to use for coupons in your favorite shops" />
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="465dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="back" />
 </LinearLayout>
