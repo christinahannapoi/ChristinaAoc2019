@@ -14,16 +14,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Set;
 
-public class MainCounterActivity extends AppCompatActivity implements SensorEventListener {
+public class MainCounterActivity extends AppCompatActivity implements SensorEventListener, View.OnClickListener {
 
     private SensorManager sensorManager;
     private TextView count;
     boolean activityRunning;
+    Button resetButton;
 
 
     @Override
@@ -33,6 +35,8 @@ public class MainCounterActivity extends AppCompatActivity implements SensorEven
 
         count = (TextView) findViewById(R.id.count);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        resetButton = findViewById(R.id.resetButton);
+        resetButton.setOnClickListener(this);
 
     }
 
@@ -158,5 +162,13 @@ public class MainCounterActivity extends AppCompatActivity implements SensorEven
 
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v==resetButton)
+        {
+           count.setText(String.valueOf("0"));
+        }
     }
 }

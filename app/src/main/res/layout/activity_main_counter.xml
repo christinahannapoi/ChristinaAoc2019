@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg4"
     android:gravity="center">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="164dp"
+        android:layout_height="36dp"
         android:text="Step counter since reboot: " />
 
     <TextView
@@ -17,7 +18,13 @@
         android:layout_height="67dp"
         android:textSize="36dp">
 
-    </TextView>
+    </TextView>-
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset" />
 
 </LinearLayout>
 
