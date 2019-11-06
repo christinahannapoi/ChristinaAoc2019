@@ -170,5 +170,6 @@ public class MainCounterActivity extends AppCompatActivity implements SensorEven
         {
            count.setText(String.valueOf("0"));
         }
+
     }
 }
