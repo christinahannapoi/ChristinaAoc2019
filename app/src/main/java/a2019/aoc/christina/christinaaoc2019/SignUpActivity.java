@@ -104,9 +104,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     editTextEmail.getText().toString().equals("") || editTextName.getText().toString().equals("")) {
                 Toast.makeText(this, "Empty Name, Email or Password", Toast.LENGTH_LONG);
             } else {
-                signUp(editTextPassword.getText().toString(), editTextEmail.getText().toString());
-                Intent i = new Intent (this, SetGoalActivity.class);
-                startActivity(i);
+                signUp(editTextEmail.getText().toString(),editTextPassword.getText().toString());
             }
         }
         if (v == imageButtonProfile) {
