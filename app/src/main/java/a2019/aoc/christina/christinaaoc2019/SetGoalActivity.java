@@ -1,25 +1,23 @@
 package a2019.aoc.christina.christinaaoc2019;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
+import android.widget.TextView;
 
 
-public class SetGoalActivity extends AppCompatActivity implements View.OnClickListener  {
+
+public class SetGoalActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText textViewGoal;
     CheckBox goal1, goal2, goal3;
+    TextView goal;
     Button okButton;
     int id = 0;
 
@@ -41,7 +39,7 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
         radioGroupGoals.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    id = checkedId;
+                id = checkedId;
             }
         });
 
@@ -49,10 +47,19 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        if (v==okButton)
-        {
+        if (v == okButton) {
             Intent i = new Intent(this, SelectCouponActivity.class);
+            if (goal1.isChecked()) {
+                i.putExtra("Goal", goal1.getText().toString());
+            }
+            if (goal2.isChecked()) {
+                i.putExtra("Goal", goal2.getText().toString());
+            }
+            if (goal3.isChecked()) {
+                i.putExtra("Goal", goal3.getText().toString());
+            }
             startActivity(i);
         }
     }
 }
+

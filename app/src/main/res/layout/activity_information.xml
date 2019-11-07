@@ -19,8 +19,14 @@
     <TextView
         android:id="@+id/contentTextView"
         android:layout_width="wrap_content"
-        android:layout_height="104dp"
+        android:layout_height="189dp"
         android:layout_weight="1"
         android:text="This app encourages every non-fit user to take on a healthy lifestyle while earning points to use for coupons in your favorite shops" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 
 </LinearLayout>
