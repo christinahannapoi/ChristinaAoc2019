@@ -29,8 +29,7 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
         if (backButton==v)
         {
             Intent i = new Intent(this, LoginActivity.class);
-            startActivity(i)
-            ;
+            startActivity(i);
         }
 
     }

@@ -49,15 +49,6 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if (v == okButton) {
             Intent i = new Intent(this, SelectCouponActivity.class);
-            if (goal1.isChecked()) {
-                i.putExtra("Goal", goal1.getText().toString());
-            }
-            if (goal2.isChecked()) {
-                i.putExtra("Goal", goal2.getText().toString());
-            }
-            if (goal3.isChecked()) {
-                i.putExtra("Goal", goal3.getText().toString());
-            }
             startActivity(i);
         }
     }
