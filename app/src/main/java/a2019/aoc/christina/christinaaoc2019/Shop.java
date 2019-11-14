@@ -1,15 +1,19 @@
 package a2019.aoc.christina.christinaaoc2019;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
 
 public class Shop {
-    private int shopImage;
     private String shopName;
     private ArrayList<Coupon> coupons;
 
-    public Shop (int shopImage, String shopName, ArrayList<Coupon>coupons)
+
+
+
+    public Shop (String shopName, ArrayList<Coupon>coupons)
     {
-        this.shopImage=shopImage;
+
         this.shopName=shopName;
         this.coupons=coupons;
     }
@@ -35,13 +39,6 @@ public class Shop {
         return coupons;
     }
 
-    public int getShopImage() {
-        return shopImage;
-    }
-
-    public void setShopImage(int shopImage) {
-        this.shopImage = shopImage;
-    }
 
 
 }

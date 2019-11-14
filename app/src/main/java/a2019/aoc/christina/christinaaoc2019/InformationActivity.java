@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class InformationActivity extends AppCompatActivity implements View.OnClickListener{
+public class InformationActivity extends AppCompatActivity{
     TextView titleTextView, contentTextView;
     Button backButton;
 
@@ -19,18 +19,8 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
 
         titleTextView = findViewById(R.id.titleTextView);
         contentTextView = findViewById(R.id.contentTextView);
-        backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(this);
 
     }
 
-    @Override
-    public void onClick(View v) {
-        if (backButton==v)
-        {
-            Intent i = new Intent(this, LoginActivity.class);
-            startActivity(i);
-        }
 
-    }
 }

@@ -19,8 +19,7 @@ public class CouponListViewActivity extends AppCompatActivity {
         lvCoupons = findViewById(R.id.couponListView);
         coupons = new ArrayList<Coupon>();
 
-        coupons.add(new Coupon("shop1","$15","12.2020","7000 steps"));
-        coupons.add(new Coupon ("shop2", "$20", "12.2020", "80000 steps"));
+
 
 
     }

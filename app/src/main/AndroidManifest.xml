@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InformationActivity"></activity>
+        <activity android:name=".ShopListViewActivity"></activity>
+        <activity android:name=".InformationActivity" />
         <activity android:name=".CouponListViewActivity" />
         <activity android:name=".MainCounterActivity" />
         <activity android:name=".SelectCouponActivity" />
@@ -26,11 +27,11 @@
         <activity android:name=".SignUpActivity" />
     </application>
     <uses-feature
-        android:name="android.hardware.sensor.stepcounter"
+        android:name="android.hardware.sensor.stepdetector"
         android:required="true" />
 
     <uses-feature
-        android:name="android.hardware.sensor.stepdetector"
+        android:name="android.hardware.sensor.stepcounter"
         android:required="true" />
 
 </manifest>

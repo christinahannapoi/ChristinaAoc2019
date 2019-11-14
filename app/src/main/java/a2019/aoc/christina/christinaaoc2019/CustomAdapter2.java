@@ -45,16 +45,11 @@ public class CustomAdapter2 extends ArrayAdapter<Coupon> {
         Coupon p = getItem(position);
 
         if (p != null) {
-            TextView shopName = (TextView) v.findViewById(R.id.shopName);
             TextView couponMoney = (TextView) v.findViewById(R.id.couponMoney);
             TextView expirationDate = (TextView) v.findViewById(R.id.expirationDate);
             TextView stepsRequired = (TextView) v.findViewById(R.id.stepsRequired);
-            ImageView shopImage = (ImageView) v.findViewById(R.id.shopImage);
 
-           if (shopName!=null)
-           {
-               shopName.setText(p.getShopName());
-           }
+
            if(couponMoney!=null)
            {
                couponMoney.setText((p.getCouponMoney()));
