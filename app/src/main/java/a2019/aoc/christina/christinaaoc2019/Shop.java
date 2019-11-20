@@ -6,20 +6,14 @@ import java.util.ArrayList;
 
 public class Shop {
     private String shopName;
-    private ArrayList<Coupon> coupons;
 
 
+    public Shop(String shopName) {
 
-
-    public Shop (String shopName, ArrayList<Coupon>coupons)
-    {
-
-        this.shopName=shopName;
-        this.coupons=coupons;
+        this.shopName = shopName;
     }
 
-    public Shop()
-    {
+    public Shop() {
 
     }
 
@@ -29,14 +23,6 @@ public class Shop {
 
     public String getShopName() {
         return shopName;
-    }
-
-    public void setCoupons(ArrayList<Coupon> coupons) {
-        this.coupons = coupons;
-    }
-
-    public ArrayList<Coupon> getCoupons() {
-        return coupons;
     }
 
 

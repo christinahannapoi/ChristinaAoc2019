@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CouponListViewActivity extends AppCompatActivity {
     ListView lvCoupons;
-    ArrayList <Coupon>  coupons;
+    ArrayList<String> coupons=new ArrayList<>();
 
 
     @Override
@@ -17,7 +17,12 @@ public class CouponListViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_coupon_list_view);
 
         lvCoupons = findViewById(R.id.couponListView);
-        coupons = new ArrayList<Coupon>();
+        coupons.add("coupon 1");
+        coupons.add("coupon 2");
+
+
+
+
 
 
 

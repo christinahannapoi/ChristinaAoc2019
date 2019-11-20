@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class ShopListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
     ListView lvShops;
-    ArrayList<String> shops=new ArrayList<>();
+    ArrayList<String> shops=new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
