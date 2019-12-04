@@ -14,6 +14,8 @@ public class ShopListViewActivity extends AppCompatActivity implements AdapterVi
     ListView lvShops;
     ArrayList<String> shops=new ArrayList<String>();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
