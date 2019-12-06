@@ -19,6 +19,8 @@ public class CouponListViewActivity extends AppCompatActivity {
         lvCoupons = findViewById(R.id.couponListView);
         coupons.add("coupon 1");
         coupons.add("coupon 2");
+        coupons.add("coupon 3");
+        coupons.add("coupon 4");
 
 
 

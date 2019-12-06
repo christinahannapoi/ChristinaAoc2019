@@ -48,7 +48,7 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if (v == okButton) {
-            Intent i = new Intent(this, SelectCouponActivity.class);
+            Intent i = new Intent(this, ShopListViewActivity.class);
             startActivity(i);
         }
     }

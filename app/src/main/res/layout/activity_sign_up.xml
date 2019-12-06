@@ -9,12 +9,6 @@
     tools:context=".SignUpActivity">
 
 
-    <ImageButton
-        android:id="@+id/imageButtonProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"

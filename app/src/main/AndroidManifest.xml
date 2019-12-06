@@ -11,6 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ShopListViewActivity"></activity>
         <activity android:name=".InformationActivity" />
+        <activity android:name=".ShopCouponList1Activity" />
+        <activity android:name=".ShopCouponList2Activity" />
+        <activity android:name=".ShopCouponList3Activity" />
+        <activity android:name=".ShopCouponList4Activity" />
         <activity android:name=".CouponListViewActivity" />
         <activity android:name=".MainCounterActivity" />
         <activity android:name=".SelectCouponActivity" />

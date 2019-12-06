@@ -49,14 +49,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         editTextName = findViewById(R.id.editTextName);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
-        imageButtonProfile = findViewById(R.id.imageButtonProfile);
-        imageButtonProfile.setOnClickListener(this);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         buttonSignUp.setOnClickListener(this);
-        Intent i = getIntent();
-        if(i.getExtras() != null ){
-            imageButtonProfile.setImageBitmap((Bitmap) i.getExtras().get("image"));
-        }
 
     }
 
@@ -75,14 +69,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Log.d("firebase", "createUserWithEmail:success");
                             Intent i = new Intent(SignUpActivity.this, SetGoalActivity.class);
                             i.putExtra("Name", editTextName.getText().toString());
                             i.putExtra("Email", editTextEmail.getText().toString());
                             i.putExtra("Password", editTextPassword.getText().toString());
                             startActivity(i);
                             // Sign in success, update UI with the signed-in user's information
+                            Log.d("firebase","createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("firebase", "createUserWithEmail:failure", task.getException());
@@ -106,10 +102,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             } else {
                 signUp(editTextEmail.getText().toString(),editTextPassword.getText().toString());
             }
-        }
-        if (v == imageButtonProfile) {
-            Intent i2 = new Intent(this, CameraActivity.class);
-            startActivity(i2);
         }
 
     }
