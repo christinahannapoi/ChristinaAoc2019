@@ -3,6 +3,7 @@ package a2019.aoc.christina.christinaaoc2019;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,35 +30,14 @@ public class ShopListViewActivity extends AppCompatActivity implements AdapterVi
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, shops);
         lvShops.setAdapter(adapter);
-        lvShops.setOnItemClickListener(this);
+        lvShops.setOnItemClickListener((AdapterView.OnItemClickListener)this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (parent.getItemAtPosition(position).equals("Shop 1"))
-        {
-            Intent i1 = new Intent(this, ShopCouponList1Activity.class);
-            i1.putExtra("Shop",position);
-            startActivity(i1);
-        }
-        if (parent.getItemAtPosition(position).equals("Shop 2"))
-        {
-            Intent i2 = new Intent (this, ShopCouponList2Activity.class);
-            i2.putExtra("Shop", position);
-            startActivity(i2);
-        }
-        if (parent.getItemAtPosition(position).equals("Shop 3"))
-        {
-            Intent i3 = new Intent (this, ShopCouponList3Activity.class);
-            i3.putExtra("Shop", position);
-            startActivity(i3);
-        }
-        if (parent.getItemAtPosition(position).equals("Shop 4"))
-        {
-            Intent i4 = new Intent (this, ShopCouponList4Activity.class);
-            i4.putExtra("Shop",position);
-            startActivity(i4);
-        }
+       Intent i = new Intent(this, ShopCouponList1Activity.class);
+       i.putExtra("shop",position);
+       startActivity(i);
 
     }
 

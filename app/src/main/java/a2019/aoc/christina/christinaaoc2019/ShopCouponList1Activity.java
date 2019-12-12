@@ -1,5 +1,6 @@
 package a2019.aoc.christina.christinaaoc2019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,11 +29,13 @@ public class ShopCouponList1Activity extends AppCompatActivity implements Adapte
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, coupons);
         lvCoupons.setAdapter(adapter);
-        lvCoupons.setOnItemClickListener((AdapterView.OnItemClickListener)this);
+        lvCoupons.setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Intent i = new Intent (this,MainCounterActivity.class);
+        i.putExtra("coupon",position);
+        startActivity(i);
     }
 }
