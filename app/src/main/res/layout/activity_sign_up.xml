@@ -9,6 +9,12 @@
     tools:context=".SignUpActivity">
 
 
+    <ImageButton
+        android:id="@+id/profileImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"

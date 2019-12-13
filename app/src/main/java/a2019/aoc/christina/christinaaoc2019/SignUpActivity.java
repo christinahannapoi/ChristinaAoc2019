@@ -28,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     EditText editTextName, editTextPassword, editTextEmail;
     Button buttonSignUp;
-    ImageButton imageButtonProfile;
+    ImageButton profileImageButton;
 
     private FirebaseAuth mAuth;
 
@@ -49,8 +49,15 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         editTextName = findViewById(R.id.editTextName);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
+        profileImageButton = findViewById(R.id.profileImageButton);
+        profileImageButton.setOnClickListener(this);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         buttonSignUp.setOnClickListener(this);
+        Intent i = getIntent();
+        if (i.getExtras()!=null)
+        {
+            profileImageButton.setImageBitmap((Bitmap)i.getExtras().get("image"));
+        }
 
     }
 
