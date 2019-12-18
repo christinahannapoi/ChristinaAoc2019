@@ -10,32 +10,24 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class ShopCouponList1Activity extends AppCompatActivity implements AdapterView.OnItemClickListener{
-    ListView lvCoupons;
-    ArrayList<String> coupons=new ArrayList<String>();
+public class ShopCouponList1Activity extends AppCompatActivity {
+        ListView lvCoupons;
+        ArrayList<String> coupons=new ArrayList<>();
 
 
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_coupon_list_view);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_list_view);
+            lvCoupons = findViewById(R.id.coupon1ListView);
 
-        lvCoupons = findViewById(R.id.coupon1ListView);
-        coupons.add("Shop 1");
-        coupons.add("Shop 2");
-        coupons.add("Shop 3");
-        coupons.add("Shop 4");
+            CouponFileReader couponFileReader = new CouponFileReader(this);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, coupons);
-        lvCoupons.setAdapter(adapter);
-        lvCoupons.setOnItemClickListener(this);
-    }
+            coupons = couponFileReader.readLine(R.raw.coupons1);
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, coupons);
+            lvCoupons.setAdapter(arrayAdapter);
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent i = new Intent (this,MainCounterActivity.class);
-        i.putExtra("coupon",position);
-        startActivity(i);
-    }
+        }
+
 }
