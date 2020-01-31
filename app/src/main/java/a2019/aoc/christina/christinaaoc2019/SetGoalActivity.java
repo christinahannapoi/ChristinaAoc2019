@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 public class SetGoalActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,9 +20,11 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
     TextView goal;
     Button okButton;
     int id = 0;
+    String value="";
 
     RadioGroup radioGroupGoals;
     RadioButton r1, r2, r3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,20 +37,22 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
         r2 = findViewById(R.id.radioButtonG2);
         r3 = findViewById(R.id.radioButtonG3);
 
-        radioGroupGoals = findViewById(R.id.radioGroupGoals);
-        radioGroupGoals.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                id = checkedId;
-            }
-        });
+        radioGroupGoals = (RadioGroup) findViewById(R.id.radioGroupGoals);
+        value = ((RadioButton)findViewById(radioGroupGoals.getCheckedRadioButtonId()))
+                        .getText().toString();
 
+        radioGroupGoals.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                Toast.makeText(getBaseContext(), value, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override
     public void onClick(View v) {
         if (v == okButton) {
             Intent i = new Intent(this, ShopListViewActivity.class);
+            i.putExtra("goal",value);
             startActivity(i);
         }
     }
