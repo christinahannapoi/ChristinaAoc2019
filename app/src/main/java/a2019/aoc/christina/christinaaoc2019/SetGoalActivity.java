@@ -41,11 +41,13 @@ public class SetGoalActivity extends AppCompatActivity implements View.OnClickLi
         value = ((RadioButton)findViewById(radioGroupGoals.getCheckedRadioButtonId()))
                         .getText().toString();
 
-        radioGroupGoals.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        radioGroupGoals.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 Toast.makeText(getBaseContext(), value, Toast.LENGTH_SHORT).show();
             }
-        }
+        });
+
     }
 
     @Override

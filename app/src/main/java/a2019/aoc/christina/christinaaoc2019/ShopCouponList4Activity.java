@@ -1,4 +1,30 @@
 package a2019.aoc.christina.christinaaoc2019;
 
-public class ShopCouponList4Activity {
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+public class ShopCouponList4Activity extends AppCompatActivity {
+
+    ListView lvCoupons;
+    ArrayList<String> coupons=new ArrayList<>();
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_coupon_list_view);
+
+        lvCoupons = findViewById(R.id.coupon4ListView);
+
+        CouponFileReader couponFileReader = new CouponFileReader(this);
+
+        coupons = couponFileReader.readLine(R.raw.coupons4);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, coupons);
+        lvCoupons.setAdapter(arrayAdapter);
+
+    }
 }
