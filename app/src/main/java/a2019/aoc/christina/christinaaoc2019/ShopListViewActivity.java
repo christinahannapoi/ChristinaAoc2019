@@ -36,7 +36,7 @@ public class ShopListViewActivity extends AppCompatActivity implements AdapterVi
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
        Intent i = new Intent(this, ShopCouponList1Activity.class);
-       i.putExtra("shop",position);
+       i.putExtra("shop",shops.get(position));
        startActivity(i);
 
     }

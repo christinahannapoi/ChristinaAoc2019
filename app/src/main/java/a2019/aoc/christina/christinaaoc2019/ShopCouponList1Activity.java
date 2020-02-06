@@ -33,6 +33,9 @@ public class ShopCouponList1Activity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Toast.makeText(ShopCouponList1Activity.this, coupons.get(position), Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent (getApplicationContext(),MainCounterActivity.class);
+                    i.putExtra("coupon", coupons);
+                    startActivity(i);
                 }
             });
 
