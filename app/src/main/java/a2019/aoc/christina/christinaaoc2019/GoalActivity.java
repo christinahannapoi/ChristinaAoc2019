@@ -8,11 +8,12 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static a2019.aoc.christina.christinaaoc2019.R.raw.goals;
+
 public class GoalActivity extends AppCompatActivity {
 
     ListView lvGoals;
-    ArrayAdapter <String> goals = new ArrayAdapter<String >();
-
+    ArrayList<String> goals=new ArrayList<>();
 
 
     @Override
@@ -20,15 +21,14 @@ public class GoalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goal);
 
-
         lvGoals = findViewById(R.id.goalListView);
 
-        GoalFileReader goalFileReader = new GoalFileReader(this);
+        CouponFileReader couponFileReader = new CouponFileReader(this);
 
 
 
-        goals = goalFileReader.readLine(R.raw.goals);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, goals);
+        goals = couponFileReader.readLine(R.raw.goals);
+        ArrayAdapter arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, goals);
         lvGoals.setAdapter(arrayAdapter);
 
     }
