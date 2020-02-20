@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class ShopListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ShopListViewActivity extends AppCompatActivity  {
     ListView lvShops;
     ArrayList<String> shops=new ArrayList<String>();
 
@@ -30,16 +30,22 @@ public class ShopListViewActivity extends AppCompatActivity implements AdapterVi
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, shops);
         lvShops.setAdapter(adapter);
-        lvShops.setOnItemClickListener((AdapterView.OnItemClickListener)this);
+
+        lvShops.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView arg0, View arg1,
+                                    int position, long arg3) {
+                // call new layout with intent
+                Intent intent = new Intent(ShopListViewActivity.this, MainCounterActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-       Intent i = new Intent(this, ShopCouponList1Activity.class);
-       i.putExtra("shop",shops.get(position));
-       startActivity(i);
 
-    }
 
 
 }

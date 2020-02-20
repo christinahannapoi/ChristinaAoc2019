@@ -30,12 +30,14 @@ public class ShopCouponList1Activity extends AppCompatActivity {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, coupons);
             lvCoupons.setAdapter(arrayAdapter);
             lvCoupons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(ShopCouponList1Activity.this, coupons.get(position), Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent (getApplicationContext(),MainCounterActivity.class);
-                    i.putExtra("coupon", coupons);
-                    startActivity(i);
+                public void onItemClick(AdapterView arg0, View arg1,
+                                        int position, long arg3) {
+                    // call new layout with intent
+                    Intent intent = new Intent(ShopCouponList1Activity.this, MainCounterActivity.class);
+                    startActivity(intent);
+
                 }
             });
 
