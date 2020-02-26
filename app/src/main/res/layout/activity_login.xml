@@ -9,12 +9,6 @@
     tools:context=".LoginActivity">
 
 
-    <TextView
-        android:id="@+id/PoiGo"
-        android:layout_width="match_parent"
-        android:layout_height="111dp"
-        android:text="TextView" />
-
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
