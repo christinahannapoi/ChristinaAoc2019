@@ -36,10 +36,26 @@ public class ShopListViewActivity extends AppCompatActivity  {
             @Override
             public void onItemClick(AdapterView arg0, View arg1,
                                     int position, long arg3) {
-                // call new layout with intent
-                Intent intent = new Intent(ShopListViewActivity.this, MainCounterActivity.class);
-                startActivity(intent);
-
+                if(position == 0)
+                {
+                    Intent i = new Intent (ShopListViewActivity.this,ShopCouponList1Activity.class);
+                    startActivity(i);
+                }
+                else if(position == 1)
+                {
+                    Intent i = new Intent (ShopListViewActivity.this,ShopCouponList2Activity.class);
+                    startActivity(i);
+                }
+                else if(position == 2)
+                {
+                    Intent i = new Intent (ShopListViewActivity.this,ShopCouponList3Activity.class);
+                    startActivity(i);
+                }
+                else if (position == 3)
+                {
+                    Intent i = new Intent (ShopListViewActivity.this,ShopCouponList4Activity.class);
+                    startActivity(i);
+                }
             }
         });
 

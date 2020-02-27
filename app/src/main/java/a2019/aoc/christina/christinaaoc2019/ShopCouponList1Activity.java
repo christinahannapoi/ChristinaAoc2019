@@ -20,7 +20,7 @@ public class ShopCouponList1Activity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_coupon_list_view);
+            setContentView(R.layout.activity_shop_coupon_list1);
 
             lvCoupons = findViewById(R.id.coupon1ListView);
 
@@ -34,9 +34,9 @@ public class ShopCouponList1Activity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView arg0, View arg1,
                                         int position, long arg3) {
-                    // call new layout with intent
-                    Intent intent = new Intent(ShopCouponList1Activity.this, MainCounterActivity.class);
-                    startActivity(intent);
+                    Intent i = new Intent(ShopCouponList1Activity.this,MainCounterActivity.class);
+                    i.putExtra("coupon",coupons);
+                    startActivity(i);
 
                 }
             });

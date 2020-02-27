@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg1"
+    android:background="@drawable/custom_button"
     tools:context=".LoginActivity">
 
 
@@ -16,6 +16,7 @@
         android:layout_margin="25dp"
         android:ems="10"
         android:hint="email"
+        android:background="@color/common_google_signin_btn_tint"
         android:inputType="textEmailAddress"
         android:padding="15dp" />
 
@@ -26,6 +27,7 @@
         android:layout_margin="25dp"
         android:ems="10"
         android:hint="password"
+        android:background="@color/common_google_signin_btn_tint"
         android:inputType="textPassword"
         android:padding="15dp" />
 

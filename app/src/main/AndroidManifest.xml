@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".GoalActivity"></activity>
-        <activity android:name=".ShopListViewActivity" />
+        <activity android:name=".CouponListViewActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ShopCouponList2Activity" />
@@ -19,18 +19,18 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".Shop" />
         <activity android:name=".MainCounterActivity" />
+        <activity android:name=".ShopListViewActivity"/>
         <activity android:name=".SelectCouponActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".AlertActivity" />
         <activity android:name=".SetGoalActivity" />
-        <activity android:name=".CouponListViewActivity">
+        <activity android:name=".ShopCouponList1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShopCouponList1Activity" />
     </application>
     <uses-feature
         android:name="android.hardware.sensor.stepcounter"

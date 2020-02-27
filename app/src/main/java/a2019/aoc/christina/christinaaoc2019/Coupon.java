@@ -3,9 +3,9 @@ package a2019.aoc.christina.christinaaoc2019;
 public class Coupon {
     private String couponMoney;
     private String expirationDate;
-    private String stepsRequired;
+    private int stepsRequired;
 
-    public Coupon ( String couponMoney, String expirationDate, String stepsRequired)
+    public Coupon ( String couponMoney, String expirationDate, int stepsRequired)
     {
 
         this.couponMoney= couponMoney;
@@ -35,11 +35,11 @@ public class Coupon {
         this.expirationDate = expirationDate;
     }
 
-    public String getStepsRequired() {
+    public int getStepsRequired() {
         return stepsRequired;
     }
 
-    public void setStepsRequired(String stepsRequired) {
+    public void setStepsRequired(int stepsRequired) {
         this.stepsRequired = stepsRequired;
     }
 
