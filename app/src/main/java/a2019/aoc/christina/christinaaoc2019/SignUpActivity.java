@@ -76,7 +76,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent i = new Intent(SignUpActivity.this, SetGoalActivity.class);
+                            Intent i = new Intent(SignUpActivity.this, GoalActivity.class);
                             i.putExtra("Name", editTextName.getText().toString());
                             i.putExtra("Email", editTextEmail.getText().toString());
                             i.putExtra("Password", editTextPassword.getText().toString());
@@ -115,11 +115,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent goToNextActivity = new Intent(getApplicationContext(), InformationActivity.class);
 
         switch (item.getItemId()) {
             case R.id.infoItem:
-                goToNextActivity = new Intent(getApplicationContext(),InformationActivity.class);
+                Intent goToNextActivity = new Intent(getApplicationContext(),InformationActivity.class);
                 AlertDialog.Builder Builder;
                 Builder = new AlertDialog.Builder(SignUpActivity.this);
                 Builder.setMessage("Are you sure you want to leave this page?");

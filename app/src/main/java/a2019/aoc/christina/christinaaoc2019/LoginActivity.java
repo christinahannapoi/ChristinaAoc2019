@@ -30,10 +30,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-        setContentView(R.layout.activity_login);
         //2. initialize properties
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword= findViewById(R.id.editTextPassword);

@@ -12,7 +12,7 @@
         <activity android:name=".GoalActivity"></activity>
         <activity android:name=".CouponListViewActivity" />
         <activity android:name=".InformationActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".ShopCouponList1Activity" />
         <activity android:name=".ShopCouponList2Activity" />
         <activity android:name=".ShopCouponList3Activity" />
         <activity android:name=".ShopCouponList4Activity" />
@@ -24,7 +24,7 @@
         <activity android:name=".CameraActivity" />
         <activity android:name=".AlertActivity" />
         <activity android:name=".SetGoalActivity" />
-        <activity android:name=".ShopCouponList1Activity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

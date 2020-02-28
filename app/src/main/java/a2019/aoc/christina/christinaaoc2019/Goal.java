@@ -5,7 +5,7 @@ public class Goal {
     private Shop s;
     private int activeSteps;
 
-    public Goal (Coupon c, Shop s, int activeSteps)
+    public Goal (Coupon c, Shop s)
     {
         this.c=c;
         this.s=s;
