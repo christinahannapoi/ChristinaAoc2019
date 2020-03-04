@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/custom_button"
+    android:background="@drawable/d274507"
     tools:context=".InformationActivity">
 
     <TextView
@@ -19,8 +19,7 @@
     <TextView
         android:id="@+id/contentTextView"
         android:layout_width="wrap_content"
-        android:layout_height="189dp"
-        android:layout_weight="1"
+        android:layout_height="900dp"
         android:text="This app encourages every non-fit user to take on a healthy lifestyle while earning points to use for coupons in your favorite shops" />
 
     <Button

@@ -113,7 +113,7 @@ public class MainCounterActivity extends AppCompatActivity implements SensorEven
                 break;
 
             case R.id.changeGoalItem:
-                goToNextActivity = new Intent(getApplicationContext(), SetGoalActivity.class);
+                goToNextActivity = new Intent(getApplicationContext(), GoalActivity.class);
                 AlertDialog.Builder Builder2;
                 Builder2 = new AlertDialog.Builder(MainCounterActivity.this);
                 Builder2.setMessage("Are you sure you want to change your goal?");

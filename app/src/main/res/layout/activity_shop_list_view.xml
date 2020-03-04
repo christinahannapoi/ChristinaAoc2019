@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShopListViewActivity"
-    android:background="@drawable/custom_button">
+    android:background="@drawable/d274507">
 
     <ListView
         android:id="@+id/shopListView"

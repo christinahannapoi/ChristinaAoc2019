@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/custom_button"
+    android:background="@drawable/d274507"
     tools:context=".SignUpActivity">
 
 
@@ -13,7 +13,7 @@
         android:id="@+id/profileImageButton"
         android:layout_width="match_parent"
         android:layout_height="113dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars[6]" />
 
     <EditText
         android:id="@+id/editTextEmail"
